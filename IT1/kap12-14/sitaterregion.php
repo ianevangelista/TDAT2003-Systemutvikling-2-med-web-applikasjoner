@@ -1,0 +1,48 @@
+
+
+<?php
+    $tilkobling=mysqli_connect ("localhost","root","", "sitatregister");
+$sql="SELECT sitat.id, sitat.tekst, person.navn, person.periode FROM person, sitat WHERE sitat.personid = person.id";
+
+$datasett = $tilkobling->query($sql);
+?>
+
+<!DOCTYPE html>
+    <html>
+    <!-- seksjon for metainfo -->
+
+    <head>
+        <title> Sidetittel</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" media="screen" "stilarkfil.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="utskrift.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            table,
+            th,
+            td {
+
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+        </style>
+
+    </head>
+    <!-- seksjon for hovedinnhold -->
+
+    <body>
+        <?php while($rad =mysqli_fetch_array($datasett)) { ?>
+       <p>
+        <strong>Sitatet:</strong> <em>&quot; <?php echo $rad["tekst"]; ?>&quot;</em><br />
+        <strong>Ble skrevet av:</strong> <?php echo $rad["navn"]; ?><br />
+        <strong>Som levde i perioden:</strong> <?php echo $rad["periode"]; ?><br />
+        
+        </p>
+        <?php } ?>
+
+
+    </body>
+
+    </html>

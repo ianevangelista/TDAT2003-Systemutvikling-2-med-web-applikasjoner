@@ -1,0 +1,145 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  margin: 0;
+}
+
+#grid-container {
+  display: grid; /* css-grid */
+  grid-template-columns: auto auto auto; /* antall kolonner */
+  background-color: #333;
+  padding: 1vw;
+  margin: 0 0 0;
+}
+
+#grid-container > header, nav, main, footer {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+header {
+  font-size: 3vw;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+nav {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+main {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+  }
+
+ #menuAlt {
+  list-style-type: none; /* gjemmer liste-prikker */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* hva som skjer når et annet element overflower elementet sin box */
+  background-color: #333;
+}
+
+.head {
+  display: flex; /* flexbox */
+}
+
+.head > h1{
+  flex: 33.3%;
+  padding: 5px;
+}
+
+#menuAlt li{
+  display: inline-block;
+  width: 20vw;
+}
+
+#menuAlt li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: tan;
+    font-size: 1.5vw;
+}
+  
+#menuAlt li a:hover {
+  background-color: #111;
+}
+
+.imageClass1 {
+    margin: 1vw;
+    width: 35vw;
+    height: 20vw;
+}
+
+.imageClass2 {
+  width:20%;
+  margin-right:5%;
+  text-align:right;
+  float: left;
+}
+
+.imageClass3 {
+  width:20%;
+  margin-top: 12%;
+  margin-left:-95%;
+  text-align:right;
+  float: left;
+}
+
+.infoText1 {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  font-size: 1vw;
+}
+
+.infoText2 {
+  font-size: 1vw;
+  width:65%;
+  margin-left:10%;
+  text-align: left;
+  float: left;
+}
+
+.infoText3 {
+  font-size: 1vw;
+  width:65%;
+  text-align: left;
+  float: left;
+}
+
+.imageHead {
+  width: 12vw;
+  height: 8vw;
+  margin: 2vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .head > h1 {
+    color: transparent;
+  }
+
+  .head > h1::after {
+    content: "ye";
+    color: black; /* set color to original text color */
+    margin-left: -30vw;
+  }
+}

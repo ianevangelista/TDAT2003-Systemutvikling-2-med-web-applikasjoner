@@ -1,0 +1,82 @@
+/*Dette CSS-arket er linket til alle nettsidene, og angir utseendet på menyen*/
+
+#menyen ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+}
+
+#menyen ul>li {
+    width: 100%;
+    text-align: center;
+    border: solid 2px black;
+    margin-bottom: -1px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#menyen ul>li>a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+#menyen ul>li:hover{
+    z-index: 1;
+    background-color: lightskyblue;
+}
+
+#menyen div>a>img {        
+    position: absolute;        
+    right: 0px;    z-index: 2; 
+} 
+
+#meny_aapen {        
+    display: none;    
+} 
+
+#meny_aapen:target {    
+    display: initial;
+}
+
+.ikon {
+    width: 50px;
+    height: 50px;
+}
+
+/*Her legger jeg inn en annen layout på menyen når skjermen på enheten er større en 1024px*/
+
+@media all and (min-width: 1024px) {
+
+    #meny_lukket {        
+        display: none;    
+    }        
+
+    #menyen div>a>img {        
+        display: none;    
+    }        
+
+    #meny_aapen {            
+        display: initial;        
+    }          
+
+    #menyen ul {        
+        flex-wrap: nowrap;        
+        position: initial;                
+        justify-content:space-around;    
+    }        
+
+    #menyen ul>li {        
+        flex: auto;        
+        margin-bottom: 0px;        
+    }        
+
+    #menyen ul>li>a {        
+        padding: 5px;    
+    }  
+
+}

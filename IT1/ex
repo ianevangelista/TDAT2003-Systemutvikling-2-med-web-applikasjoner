@@ -1,0 +1,8 @@
+<?php
+    $tilkobling=mysqli_connect ("localhost","root","root", "bruktbutikk");
+    
+$sql="SELECT medlemid, navn, adresse, mobil FROM medlem";
+$datasett = $tilkobling->query($sql);
+?>
+
+<?php while($rad=mysqli_fetch_array($datasett)) { ?>
